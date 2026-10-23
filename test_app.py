@@ -336,8 +336,8 @@ def test_theme_controls_and_search_have_no_command_k_hint(client):
     assert 'data-theme="dark"' in css
     js = client.get("/script.js").text
     assert "function applyTheme(theme, persist = false)" in js
-    assert 'name="stockflow-api-base-url"' not in html
-    assert 'name="stockflow-api-key"' not in html
+    assert 'name="stockflow-api-base-url" content="https://citireafvqtqkuxvmail.supabase.co/functions/v1/stockflow-api"' in html
+    assert 'name="stockflow-api-key" content="sb_publishable_' in html
     assert 'meta[name="stockflow-api-base-url"]' in js
     assert 'meta[name="stockflow-api-key"]' in js
     assert "headers.set('apikey', API_PUBLIC_KEY)" in js
