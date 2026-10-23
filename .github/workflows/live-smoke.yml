@@ -1,0 +1,25 @@
+name: Wexa live acceptance smoke
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/live_smoke_test.mjs"
+      - ".github/workflows/live-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+      - name: Run live Render and API acceptance checks
+        run: node scripts/live_smoke_test.mjs
+        env:
+          STOCKFLOW_RENDER_BASE_URL: https://wexa-ai-sde-assessment.onrender.com
+          STOCKFLOW_API_BASE_URL: https://citireafvqtqkuxvmail.supabase.co/functions/v1/stockflow-api
+          STOCKFLOW_API_KEY: sb_publishable_twSAXRjaA43JiAdRRTfzBA_sizr7Fvc
