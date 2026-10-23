@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b2d">
+  <meta name="description" content="StockFlow is a simple, secure inventory workspace for small businesses.">
+  <title>StockFlow — Inventory, in control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=wexa-frontend-v1">
+</head>
+<body>
+  <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+  <div id="marketing-view" class="marketing-shell">
+    <header class="marketing-header">
+      <a class="brand marketing-brand" href="#top" aria-label="StockFlow home">
+        <span class="brand-mark"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M6 10.5 18 4l12 6.5v14L18 31 6 24.5z"/><path d="M6.5 10.7 18 17l11.5-6.3M18 17v13.5M12 7.3l12 6.4"/></svg></span><span>stockflow<span class="brand-period">.</span></span>
+      </a>
+      <button id="marketing-menu-toggle" class="marketing-menu-toggle" type="button" aria-label="Open website navigation" aria-controls="marketing-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav id="marketing-nav" class="marketing-nav" aria-label="Website navigation">
+        <a href="#features">Features</a>
+        <a href="#workflow">How it works</a>
+        <a href="#preview">Product tour</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="marketing-actions">
+        <button class="marketing-login" type="button" data-auth-mode="login">Log in</button>
+        <button class="marketing-start" type="button" data-auth-mode="signup">Get started <span aria-hidden="true">↗</span></button>
+        <button id="marketing-theme-toggle" class="marketing-theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">◐</button>
+      </div>
+    </header>
+
+    <main id="marketing-main">
+      <section id="top" class="marketing-hero">
+        <div class="marketing-hero-bg" aria-hidden="true"></div>
+        <div class="marketing-container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="hero-pill"><span class="hero-pill-dot"></span> STOCK CONTROL, WITHOUT THE CHAOS</div>
+            <h1>Know your stock.<br><span>Move with certainty.</span></h1>
+            <p class="hero-description">A calmer way to manage products, spot low inventory early, and make the next business decision with confidence.</p>
+            <div class="hero-buttons">
+              <button class="marketing-start marketing-start-large" type="button" data-auth-mode="signup">Build your workspace <span aria-hidden="true">↗</span></button>
+              <button class="marketing-demo" type="button" data-action="demo-access"><span class="play-icon" aria-hidden="true">▶</span> Explore the live demo</button>
+            </div>
+            <div class="hero-proof">
+              <div class="proof-avatars" aria-hidden="true"><span>S</span><span>F</span><span>+</span></div>
+              <div><strong>One clear view of your inventory</strong><small>Products · stock levels · workspace settings</small></div>
+            </div>
+          </div>
+          <div class="hero-visual reveal" aria-label="Illustrative preview of the StockFlow inventory dashboard">
+            <div class="float-tag float-tag-top"><span class="float-dot"></span> Sample workspace</div>
+            <div class="preview-window">
+              <div class="preview-window-head"><div class="preview-window-dots"><i></i><i></i><i></i></div><span>stockflow / overview</span><span class="preview-live"><b></b> IN SYNC</span></div>
+              <div class="preview-window-body">
+                <div class="preview-heading"><div><span class="preview-kicker">YOUR INVENTORY</span><h3>Good morning.</h3><p>Here’s the shape of your stock.</p></div><div class="preview-mini-logo">S.</div></div>
+                <div class="preview-metrics">
+                  <div class="preview-metric"><span>Products</span><strong>128</strong><small>In your catalog</small></div>
+                  <div class="preview-metric"><span>Units on hand</span><strong>1,840</strong><small>Across products</small></div>
+                  <div class="preview-metric preview-metric-warn"><span>Low stock</span><strong>06</strong><small>Needs a look</small></div>
+                </div>
+                <div class="preview-lower">
+                  <div class="preview-chart"><div class="preview-row-head"><strong>Stock movement</strong><span>Last 7 days</span></div><div class="mini-chart" aria-hidden="true"><i style="height:32%"></i><i style="height:47%"></i><i style="height:39%"></i><i style="height:64%"></i><i style="height:52%"></i><i style="height:80%"></i><i style="height:70%"></i><i style="height:92%"></i></div><div class="mini-chart-labels"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div></div>
+                  <div class="preview-stock-list"><div class="preview-row-head"><strong>Restock watch</strong><span>↗</span></div><div class="preview-stock-item"><span class="preview-product-icon icon-cyan">B</span><span><b>Everyday bottle</b><small>SKU · BT-104</small></span><em>03 left</em></div><div class="preview-stock-item"><span class="preview-product-icon icon-lilac">P</span><span><b>Paper goods</b><small>SKU · PG-218</small></span><em>04 left</em></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="float-tag float-tag-bottom"><span class="float-check">✓</span> Your workspace, your data</div>
+          </div>
+        </div>
+        <a class="hero-scroll-cue" href="#features"><span></span> SCROLL TO EXPLORE</a>
+      </section>
+
+      <section class="value-strip" aria-label="StockFlow essentials">
+        <div class="marketing-container value-strip-grid"><div><span class="value-mark">◈</span><span><strong>One tidy catalog</strong><small>Keep product details together</small></span></div><div><span class="value-mark">↗</span><span><strong>Clear stock signals</strong><small>Know what needs attention</small></span></div><div><span class="value-mark">⌘</span><span><strong>One private workspace</strong><small>Your organization stays separate</small></span></div><div><span class="value-mark">◎</span><span><strong>Simple by design</strong><small>Less digging, more clarity</small></span></div></div>
+      </section>
+
+      <section id="features" class="marketing-section features-section">
+        <div class="marketing-container">
+          <div class="section-intro reveal"><span class="section-eyebrow">WHAT YOU GET</span><h2>All the essentials.<br><span>Nothing in the way.</span></h2><p>StockFlow brings the everyday inventory tasks into one focused place—so you can spend less time piecing together numbers.</p></div>
+          <div class="feature-grid">
+            <article class="feature-card reveal"><div class="feature-icon feature-icon-blue"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="11" width="7" height="10" rx="2"/><rect x="3" y="14" width="8" height="7" rx="2"/></svg></div><span class="feature-number">01 / OVERVIEW</span><h3>See the whole picture</h3><p>Get product counts, available units and low-stock items in a single glanceable dashboard.</p><a href="#preview" class="feature-link">Explore the dashboard <span>↗</span></a></article>
+            <article class="feature-card reveal"><div class="feature-icon feature-icon-green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 8h14M5 16h14"/><circle cx="12" cy="8" r="3"/><circle cx="12" cy="16" r="3"/></svg></div><span class="feature-number">02 / STOCK LEVELS</span><h3>Catch low stock earlier</h3><p>Set a default threshold for your workspace or tune it for individual products.</p><a href="#workflow" class="feature-link">See how it works <span>↗</span></a></article>
+            <article class="feature-card reveal"><div class="feature-icon feature-icon-orange"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg></div><span class="feature-number">03 / CATALOG</span><h3>Keep product data tidy</h3><p>Create, find, edit and remove products with names, SKUs, quantities and prices.</p><a href="#workflow" class="feature-link">View the workflow <span>↗</span></a></article>
+            <article class="feature-card reveal"><div class="feature-icon feature-icon-purple"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2M16 3h5v5"/></svg></div><span class="feature-number">04 / YOUR RULES</span><h3>Make thresholds yours</h3><p>Change workspace preferences and see low-stock status adjust to your chosen level.</p><a href="#faq" class="feature-link">Read common questions <span>↗</span></a></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="workflow" class="workflow-section">
+        <div class="marketing-container workflow-grid">
+          <div class="workflow-copy reveal"><span class="section-eyebrow section-eyebrow-light">A CLEANER ROUTINE</span><h2>From a product list<br>to a clearer next step.</h2><p>StockFlow keeps the main workflow easy to follow. Start with your catalog, keep quantities current, and use low-stock signals to plan your next move.</p><button class="workflow-cta" type="button" data-auth-mode="signup">Set up your workspace <span aria-hidden="true">↗</span></button><div class="workflow-note"><span>✓</span> No complicated setup flow. Just the essentials.</div></div>
+          <div class="workflow-steps reveal"><article><span class="workflow-step-num">01</span><div><h3>Add your products</h3><p>Record a name, SKU, quantity and optional pricing details.</p></div><span class="workflow-step-icon">＋</span></article><article><span class="workflow-step-num">02</span><div><h3>Keep quantities current</h3><p>Update a product or use a reasoned stock adjustment.</p></div><span class="workflow-step-icon">↕</span></article><article><span class="workflow-step-num">03</span><div><h3>Act on the signal</h3><p>Review items at or below your low-stock threshold.</p></div><span class="workflow-step-icon">↗</span></article><div class="workflow-decoration" aria-hidden="true"></div></div>
+        </div>
+      </section>
+
+      <section id="preview" class="marketing-section preview-section">
+        <div class="marketing-container preview-section-grid">
+          <div class="preview-section-copy reveal"><span class="section-eyebrow">A QUICK LOOK INSIDE</span><h2>Built around the work<br><span>you actually do.</span></h2><p>The live workspace puts the catalog, dashboard and settings in reach. Explore a private demo or create an account to start with your own inventory.</p><div class="preview-check-list"><div><span>✓</span> Search products by name or SKU</div><div><span>✓</span> Update and adjust stock quantities</div><div><span>✓</span> Keep each organization’s inventory separate</div></div><div class="preview-actions"><button class="marketing-start" type="button" data-action="demo-access">Open live demo <span aria-hidden="true">↗</span></button><button class="preview-text-btn" type="button" data-auth-mode="signup">Create an account</button></div></div>
+          <div class="inventory-scene reveal" aria-label="Decorative product list preview">
+            <div class="scene-glow"></div><div class="scene-card"><div class="scene-card-header"><span class="scene-window-dots"><i></i><i></i><i></i></span><strong>Product catalog</strong><span class="scene-filter">All products⌄</span></div><div class="scene-search">⌕ <span>Search product name or SKU</span><kbd>/</kbd></div><div class="scene-table-head"><span>PRODUCT</span><span>SKU</span><span>ON HAND</span><span>STATUS</span></div><div class="scene-product"><span class="scene-product-icon cyan">B</span><span class="scene-product-name"><b>Everyday bottle</b><small>Reusable drinkware</small></span><code>BT-104</code><strong>03</strong><em class="scene-low">Low stock</em></div><div class="scene-product"><span class="scene-product-icon purple">P</span><span class="scene-product-name"><b>Paper goods</b><small>Office essentials</small></span><code>PG-218</code><strong>04</strong><em class="scene-low">Low stock</em></div><div class="scene-product"><span class="scene-product-icon green">M</span><span class="scene-product-name"><b>Storage crate</b><small>Warehouse supplies</small></span><code>SC-073</code><strong>36</strong><em class="scene-good">In stock</em></div><div class="scene-product"><span class="scene-product-icon orange">C</span><span class="scene-product-name"><b>Shipping carton</b><small>Packing materials</small></span><code>CT-011</code><strong>82</strong><em class="scene-good">In stock</em></div><div class="scene-card-footer"><span>Illustrative preview · Sample data</span><button type="button" data-action="demo-access">Try the real workspace →</button></div></div><div class="scene-floating-chip"><span>✓</span><div><b>Simple, clear, organized</b><small>StockFlow workspace</small></div></div></div>
+        </div>
+      </section>
+
+      <section class="quote-band"><div class="marketing-container quote-band-inner reveal"><span class="quote-mark">“</span><p>Good inventory decisions begin with knowing what’s there, what’s running low, and what to do next.</p><span class="quote-caption">THE STOCKFLOW APPROACH</span></div></section>
+
+      <section id="faq" class="marketing-section faq-section">
+        <div class="marketing-container faq-grid"><div class="section-intro reveal"><span class="section-eyebrow">QUESTIONS, ANSWERED</span><h2>Clear answers.<br><span>Before you begin.</span></h2><p>Want to explore before creating an account? The demo opens its own isolated workspace.</p><button class="preview-text-btn" type="button" data-action="demo-access">Try demo access <span aria-hidden="true">↗</span></button></div><div class="faq-list reveal"><details><summary>Can I explore StockFlow without signing up?</summary><p>Yes. Choose “Explore the live demo” to open a separate demo workspace. Its inventory is isolated from other accounts.</p></details><details><summary>What can I manage in the workspace?</summary><p>You can create, search, edit and delete products, track quantities, adjust stock with a note, and view dashboard totals.</p></details><details><summary>How does low-stock status work?</summary><p>Each product can use its own threshold. If it does not have one, StockFlow uses the default threshold for that workspace.</p></details><details><summary>Does each organization see its own inventory?</summary><p>Yes. Product queries are scoped to the signed-in organization, so one workspace cannot browse another workspace’s products.</p></details></div></div>
+      </section>
+
+      <section class="final-cta-section"><div class="marketing-container final-cta reveal"><div><span class="section-eyebrow section-eyebrow-light">START WITH A CLEARER VIEW</span><h2>Your inventory.<br><span>Finally in flow.</span></h2><p>Create your own workspace or test the product in demo mode.</p></div><div class="final-cta-actions"><button type="button" class="final-cta-button" data-auth-mode="signup">Get started <span aria-hidden="true">↗</span></button><button type="button" class="final-cta-link" data-action="demo-access">Explore demo instead →</button></div><div class="final-cta-orbit orbit-a" aria-hidden="true"></div><div class="final-cta-orbit orbit-b" aria-hidden="true"></div></div></section>
+    </main>
+
+    <footer class="marketing-footer"><div class="marketing-container marketing-footer-top"><a class="brand marketing-brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M6 10.5 18 4l12 6.5v14L18 31 6 24.5z"/><path d="M6.5 10.7 18 17l11.5-6.3M18 17v13.5M12 7.3l12 6.4"/></svg></span><span>stockflow<span class="brand-period">.</span></span></a><p>Inventory clarity, made everyday.</p><nav aria-label="Footer navigation"><a href="#features">Features</a><a href="#workflow">Workflow</a><a href="#preview">Product tour</a><a href="#faq">FAQ</a><button type="button" data-auth-mode="login">Log in</button></nav></div><div class="marketing-container marketing-footer-bottom"><span>© <span id="marketing-year"></span> StockFlow</span><span>Keep count. Keep moving.</span><a href="#top">Back to top ↑</a></div></footer>
+  </div>
+
+  <section id="auth-view" class="auth-view hidden">
+    <div class="auth-left">
+      <a class="brand brand-light" href="./" aria-label="StockFlow home">
+        <span class="brand-mark"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M6 10.5 18 4l12 6.5v14L18 31 6 24.5z"/><path d="M6.5 10.7 18 17l11.5-6.3M18 17v13.5M12 7.3l12 6.4"/></svg></span><span>stockflow<span class="brand-period">.</span></span>
+      </a>
+      <div class="auth-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> INVENTORY, IN CONTROL</span>
+        <h1>Know what you have.<br><span>Own what comes next.</span></h1>
+        <p>One calm, clear place to track every product, understand your stock, and keep your business moving.</p>
+        <div class="auth-benefits">
+          <div><span class="benefit-check">✓</span><span>Inventory clarity at a glance</span></div>
+          <div><span class="benefit-check">✓</span><span>Low-stock signals before surprises</span></div>
+          <div><span class="benefit-check">✓</span><span>Your workspace, your data</span></div>
+        </div>
+      </div>
+      <div class="auth-footnote"><span class="status-pulse"></span> A better way to keep count.</div>
+      <div class="auth-orbit orbit-one"></div><div class="auth-orbit orbit-two"></div>
+    </div>
+    <div class="auth-right">
+      <button id="auth-theme-toggle" class="theme-toggle auth-theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span></button>
+      <div class="auth-form-wrap">
+        <div class="auth-mobile-brand brand">
+          <span class="brand-mark"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M6 10.5 18 4l12 6.5v14L18 31 6 24.5z"/><path d="M6.5 10.7 18 17l11.5-6.3M18 17v13.5M12 7.3l12 6.4"/></svg></span><span>stockflow<span class="brand-period">.</span></span>
+        </div>
+        <div id="auth-form-content"></div>
+        <p class="auth-legal">By continuing, you agree to use StockFlow responsibly and keep your account credentials secure.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="app-shell" class="app-shell hidden">
+    <aside id="sidebar" class="sidebar">
+      <a class="brand brand-light sidebar-brand" href="#dashboard" data-page="dashboard" aria-label="StockFlow dashboard">
+        <span class="brand-mark"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M6 10.5 18 4l12 6.5v14L18 31 6 24.5z"/><path d="M6.5 10.7 18 17l11.5-6.3M18 17v13.5M12 7.3l12 6.4"/></svg></span><span>stockflow<span class="brand-period">.</span></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <div class="workspace-switcher">
+        <div class="workspace-avatar" id="workspace-avatar">S</div>
+        <div class="workspace-info"><strong id="workspace-name">My Workspace</strong><span>Owner workspace</span></div><span class="switcher-chevron">⌄</span>
+      </div>
+      <nav class="sidebar-nav" aria-label="Main navigation">
+        <div class="nav-label">OVERVIEW</div>
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="8" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="11" width="7" height="10" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg></span><span>Dashboard</span></button>
+        <button class="nav-item" data-page="products"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5M12 13v8"/></svg></span><span>Products</span><span id="product-nav-count" class="nav-count hidden">0</span></button>
+        <div class="nav-label nav-label-spaced">PREFERENCES</div>
+        <button class="nav-item" data-page="settings"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.1.9-1.1 1.9-1.4-.5a8 8 0 0 1-1.8 1l-.2 1.5h-2.2l-.2-1.5a8 8 0 0 1-1.8-1l-1.4.5-1.1-1.9 1.1-.9a7.4 7.4 0 0 1 0-2l-1.1-.9 1.1-1.9 1.4.5a8 8 0 0 1 1.8-1l.2-1.5h2.2l.2 1.5a8 8 0 0 1 1.8 1l1.4-.5 1.1 1.9-1.1.9a7.4 7.4 0 0 1 0 2Z" transform="translate(-1 -1) scale(1.08)"/></svg></span><span>Settings</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✳</div><strong>Keep your stock in sync</strong><p>Small updates today make better decisions tomorrow.</p></div>
+        <div class="user-menu">
+          <div class="user-avatar" id="user-avatar">M</div>
+          <div class="user-meta"><strong id="user-email">owner@example.com</strong><span>Workspace owner</span></div>
+          <button id="logout-button" class="logout-button" title="Sign out" aria-label="Sign out"><svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg></button>
+        </div>
+      </div>
+    </aside>
+    <main class="main-panel">
+      <header class="topbar">
+        <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="breadcrumb"><span>Workspace</span><span class="breadcrumb-slash">/</span><strong id="breadcrumb-current">Dashboard</strong></div>
+        <div class="topbar-actions">
+          <div class="global-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="global-search-input" type="search" placeholder="Search products..." maxlength="120" autocomplete="off" aria-label="Search products"></div>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span></button>
+          <div class="topbar-divider"></div><div class="today-chip"><span class="today-dot"></span><span id="today-label">Your workspace</span></div>
+        </div>
+      </header>
+      <section id="page-content" class="page-content" aria-live="polite" aria-busy="false"></section>
+      <footer class="app-footer"><span>© <span id="footer-year"></span> StockFlow</span><span>Built for everyday inventory clarity</span></footer>
+    </main>
+  </div>
+  <div id="modal-root"></div>
+  <div id="sidebar-scrim" class="sidebar-scrim hidden"></div>
+  <script src="script.js?v=wexa-frontend-v1" defer></script>
+</body>
+</html>
