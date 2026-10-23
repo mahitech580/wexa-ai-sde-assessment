@@ -2,43 +2,42 @@
 
 **Wexa AI · Software Developer Intern technical assessment**
 
-A scope-limited, multi-tenant inventory management app built with Python and a lightweight browser frontend. FastAPI serves the HTML/CSS/JavaScript and JSON API from one service.
+A scope-limited, multi-tenant inventory management app, with a browser UI and a FastAPI backend.
 
 ## Features
 
-- Signup/login with salted PBKDF2 password hashing and expiring signed bearer tokens.
-- Signup creates an organization and a default low-stock setting.
-- Server-side organization scoping for all product access.
-- Create, list, search, detail, update, delete, and stock-adjust operations.
-- Required product name and SKU; SKU unique per organization.
-- Optional description/prices and product-specific low-stock threshold.
-- Dashboard counts for products and total units, plus low-stock products.
-- Settings page for the organization default threshold.
-- Input validation, helpful errors, confirmation dialogs, and responsive layout.
-- Automated API tests and Postman collection.
+- Email/password signup/login with salted PBKDF2 password hashing and expiring signed bearer tokens.
+- Organization creation at signup and server-enforced tenant isolation.
+- Product create, list, search, detail, update, stock adjustment, and delete.
+- Required product name/SKU and per-organization SKU uniqueness.
+- Quantity, optional description/prices, and custom low-stock threshold.
+- Dashboard product count, unit totals, and low-stock items.
+- Organization default low-stock threshold in Settings.
+- Responsive interface, input validation, confirmation dialogs, and error/success feedback.
+- 29 automated tests covering authentication, validation, CRUD, threshold behavior, and tenant isolation.
+- Postman API collection and GitHub Actions CI.
 
-## Technology
+## Stack
 
 - **Frontend:** HTML, CSS, vanilla JavaScript
 - **Backend:** Python, FastAPI, Pydantic
-- **Data:** SQLAlchemy; SQLite locally; PostgreSQL/MySQL through `DATABASE_URL`
-- **Tests:** pytest, FastAPI TestClient
-- **Deployment:** Render and Docker
+- **Data layer:** SQLAlchemy; SQLite locally and PostgreSQL/MySQL through `DATABASE_URL`
+- **Deployment preview:** Render serves the app shell; its configured Supabase Edge API handles persistent demo data.
+- **Tests:** pytest + FastAPI TestClient
 
-## Run locally (Windows PowerShell)
+## Run the FastAPI app locally (Windows PowerShell)
 
 Requires Python 3.11+.
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 Copy-Item .env.example .env
 uvicorn app:app --reload
 ```
 
-Open http://127.0.0.1:8000. API docs are at http://127.0.0.1:8000/api/docs and health status is at http://127.0.0.1:8000/api/health.
+Open http://127.0.0.1:8000. API docs: http://127.0.0.1:8000/api/docs. Health: http://127.0.0.1:8000/api/health.
 
 ## Tests
 
@@ -47,30 +46,30 @@ pytest -q
 node --check script.js
 ```
 
-The suite covers authentication, validation, tenant isolation, product CRUD, search, stock adjustments, dashboard summaries, threshold fallback, static assets, and application security headers.
+The tests use an isolated in-memory database. They do not read or modify any production or ORBIT database.
 
 ## API endpoints
 
 | Method | Path | Purpose |
 |---|---|---|
-| GET | `/api/health` | Health and database connectivity |
+| GET | `/api/health` | Health and DB status |
 | POST | `/api/auth/signup` | Create owner and organization |
 | POST | `/api/auth/login` | Obtain bearer token |
-| GET | `/api/me` | Current account and organization |
-| GET / POST | `/api/products` | List/search or create products |
-| GET / PATCH / DELETE | `/api/products/{product_id}` | Read/update/delete one product |
-| POST | `/api/products/{product_id}/adjust-stock` | Adjust quantity with a note |
-| GET / PATCH | `/api/settings` | Read/update default stock threshold |
-| GET | `/api/dashboard` | Inventory totals and low-stock items |
+| GET | `/api/me` | Current account/workspace |
+| GET / POST | `/api/products` | List/search or create |
+| GET / PATCH / DELETE | `/api/products/{product_id}` | Read/update/delete |
+| POST | `/api/products/{product_id}/adjust-stock` | Adjust quantity with note |
+| GET / PATCH | `/api/settings` | Read/update default threshold |
+| GET | `/api/dashboard` | Inventory totals and low-stock list |
 
-Authenticated requests use `Authorization: Bearer <token>`. Organization IDs are derived from the authenticated account rather than trusted from request payloads.
+Authenticated requests use `Authorization: Bearer <token>`. The backend derives organization ownership from the authenticated user, not from a client-supplied tenant ID.
 
-## Deploy on Render
+## Deployment notes
 
-The supplied `render.yaml` configures a Python web service and requests a persistent external `DATABASE_URL` during Blueprint setup. Use a PostgreSQL/MySQL connection string or update the Blueprint to reference a managed database in your workspace. Never commit database credentials or signing secrets.
+The checked-in Render Blueprint uses the Supabase-backed API mode for the live preview so it can use the existing tenant-isolated API without provisioning or reusing a Render Postgres database. The Python FastAPI mode remains available for a self-hosted deployment: configure a dedicated persistent `DATABASE_URL`, set `STOCKFLOW_API_MODE=fastapi`, and keep `APP_ENV=production` with a generated unique `SECRET_KEY`.
 
-**Free-tier note:** Render's free web service has an ephemeral filesystem, and free Render Postgres expires 30 days after creation. Do not rely on a local SQLite file for persisted data on Render; use an appropriately managed persistent database. Check current limits at https://render.com/docs/free.
+Render free web services use an ephemeral filesystem, and free Render Postgres expires after 30 days. Do not use a local SQLite file for persistent production data on Render. See https://render.com/docs/free for current limitations.
 
-## Excluded from this MVP
+## Out of scope
 
-Staff/invites/roles, multiple warehouses, variants, integrations, orders/reservations, purchase orders/suppliers, notifications, CSV import, billing, advanced analytics, and detailed stock movement history.
+Staff invites/roles, multi-warehouse support, variants, channel integrations, order management, purchase orders, notifications, CSV imports, billing, advanced reporting, and a detailed stock movement ledger.
