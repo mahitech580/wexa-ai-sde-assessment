@@ -1,0 +1,29 @@
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+
+# Local database files
+stockflow.db
+stockflow.db-shm
+stockflow.db-wal
+*.sqlite
+*.sqlite3
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
